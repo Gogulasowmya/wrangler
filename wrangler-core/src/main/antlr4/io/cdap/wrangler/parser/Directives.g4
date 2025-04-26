@@ -140,8 +140,12 @@ numberRange
  ;
 
 value
- : String | Number | Column | Bool
- ;
+ : String
+ | Number 
+ | Column 
+ | Bool
+ | BYTE_SIZE      / / <-- Add this line
+ | TIME_DURATION   / / <-- And this line
 
 ecommand
  : '!' Identifier
