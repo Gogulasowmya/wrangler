@@ -203,6 +203,12 @@ identifierList
 /*
  * Following are the Lexer Rules used for tokenizing the recipe.
  */
+// Define the BYTE_SIZE and TIME_DURATION fragments here
+fragment BYTE_UNIT: ('B' | 'KB' | 'MB' | 'GB' | 'TB' | 'PB');
+fragment TIME_UNIT: ('ns' | 'us' | 'ms' | 's' | 'm' | 'h');
+
+BYTE_SIZE: [0-9]+ ('.' [0-9]+)? BYTE_UNIT;
+TIME_DURATION: [0-9]+ ('.' [0-9]+)? TIME_UNIT;
 OBrace   : '{';
 CBrace   : '}';
 SColon   : ';';
